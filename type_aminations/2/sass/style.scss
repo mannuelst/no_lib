@@ -1,0 +1,64 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2f3542;
+    color: #fff;
+    
+}
+.animation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+
+    span{
+        position: relative;
+
+        &::before{
+            content: ' Development';
+            color: #ff7f50;
+            animation: words 20s infinite;
+
+        }
+        &::after{
+            content: " ";
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            background-color: #2f3542; 
+            border-left: 2px solid #ff7f50;
+            right: -8px;
+            animation: cursor .8s infinite, typing 20s steps(16) infinite;
+        }
+
+    }
+
+}
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+    
+}
+@keyframes words {
+    0%,33%{
+        content: ' Design';
+    }
+    34%,66%{
+        content: ' Branding';
+    }
+    65%,100%{
+        content: ' Product Digital';
+    }
+    
+}
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
